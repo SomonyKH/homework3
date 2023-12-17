@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register form</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+    body {
+      font-family: "Poppins", sans-serif;
+      color: aliceblue;
+    }
+    h2 {
+      color: black;
+      text-align: center;
+      text-decoration: underline;
+    }
+    label {
+      color: black;
+    }
+    form {
+      background-color: rgb(255, 248, 30);
+      width: 50%;
+      margin: 1rem auto;
+      padding: 1rem 1.5rem;
+      border-radius: 0 20px 0 20px;
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      box-sizing: border-box;
+      border: none;
+    }
+    input:focus {
+      outline: none;
+    }
+    input[type="button"] {
+      background-color: dodgerblue;
+      color: white;
+      margin-top: 2rem;
+      cursor: pointer;
+    }
+    input[type="button"]:hover {
+      background-color: rgb(0, 89, 177);
+    }
+    @media (max-width: 768px) {
+      form {
+        width: 90%;
+      }
+    }
+    /* table */
+    th {
+      background-color: cyan;
+      color: black;
+      border: 1px solid black;
+    }
+    #tab {
+      border: 1px solid black;
+      border-spacing: 0px;
+    }
+    #tab td {
+      border: 1px solid black;
+      background-color: rgb(102, 102, 102);
+    }
+  </style>
+  <body>
+    <form action="">
+      <h2>Register Form</h2>
+      <table>
+        <tr>
+          <td>
+            <label for="firstName">First Name:</label>
+          </td>
+          <td>
+            <input type="text" id="fnames" placeholder="first name" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="">Last Name:</label>
+          </td>
+          <td>
+            <input type="text" id="lnames" placeholder="last name" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="">Age:</label>
+          </td>
+          <td>
+            <input type="number" id="ages" placeholder="age" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="">Gmail:</label>
+          </td>
+          <td>
+            <input type="text" id="gmails" placeholder="gmail" />
+          </td>
+        </tr>
+        <tr>
+          <td><input type="button" value="Save" onclick="display()" /></td>
+        </tr>
+      </table>
+    </form>
+    <!-- Sheet -->
+    <table id="tab">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Age</th>
+          <th>Gmail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Process Javascript -->
+      </tbody>
+    </table>
+  </body>
+</html>
+<script>
+  function display() {
+    var fname = document.getElementById("fnames").value;
+    var lname = document.getElementById("lnames").value;
+    var age = document.getElementById("ages").value;
+    var gmail = document.getElementById("gmails").value;
+
+    var table = document.getElementById("tab").getElementsByTagName("tbody")[0];
+    var newRow = table.insertRow();
+
+    var cell0 = newRow.insertCell(0);
+    var cell1 = newRow.insertCell(1);
+    var cell2 = newRow.insertCell(2);
+    var cell3 = newRow.insertCell(3);
+
+    cell0.innerHTML = fname;
+    cell1.innerHTML = lname;
+    cell2.innerHTML = age;
+    cell3.innerHTML = gmail;
+
+    document.getElementById("fnames").value = "";
+    document.getElementById("lnames").value = "";
+    document.getElementById("ages").value = "";
+    document.getElementById("gmails").value = "";
+  }
+</script>
